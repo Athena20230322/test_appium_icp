@@ -35,12 +35,30 @@ class TestClass:
         global driver
         driver = webdriver.Remote('http://localhost:4723/wd/hub', desired_caps)
 
-        #close_btn_locator = (MobileBy.ID, "com.nineyi.shop.s002131:id/dialog_negative_btn")
-        # closed = (MobileBy.XPATH,'/hierarchy/android.widget.FrameLayout/android.widget.TextView[2]')
-        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(closed)).click()
-
         close_btn_locator = (MobileBy.ID, "tw.com.icash.a.icashpay:id/txt_right")
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(close_btn_locator)).click()
+
+        # one = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("1")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(one)).click()
+        #
+        # three = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("3")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(three)).click()
+        #
+        # five = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("5")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(five)).click()
+        #
+        # seven = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text"7")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(seven)).click()
+        # nine = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text"9")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(nine)).click()
+        #
+        # zero = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text"0")')
+        # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(zero)).click()
+
+
+
+
+
 
         # account_locator = (MobileBy.ANDROID_UIAUTOMATOR, 'new UiSelector().text("我的帳戶")')
         # WebDriverWait(driver, 10).until(EC.visibility_of_element_located(account_locator)).click()
@@ -187,7 +205,6 @@ class TestClass:
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(edit1)).send_keys("BFW")
         edit2 = (MobileBy.ID, "tw.com.icash.a.icashpay:id/edit2")
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(edit2)).send_keys("1060")
-
         Billing_inquiry = (MobileBy.ID, "tw.com.icash.a.icashpay:id/query")
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Billing_inquiry)).click()
         time.sleep(3)
@@ -250,9 +267,15 @@ class TestClass:
     #     #下一步
     #     driver.find_element(MobileBy.ID, "com.nineyi.shop.s002131:id/shoppingcart_next_step_button").click()
 
-    # def test_006(self):
-    #     homep4 = (MobileBy.XPATH,'//android.view.ViewGroup[@content-desc="tabBarHome"]/android.view.ViewGroup/android.widget.LinearLayout/android.widget.TextView')
-    #     WebDriverWait(driver, 10).until(EC.visibility_of_element_located(homep4)).click()
+    def test_006(self):
+        home6 = (MobileBy.ID, "tw.com.icash.a.icashpay:id/navigation_home")
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(home6)).click()
+        Generaltax = (MobileBy.XPATH, '/hierarchy/android.widget.FrameLayout/android.widget.ScrollView/androidx.recyclerview.widget.RecyclerView[2]/android.widget.FrameLayout[1]')
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Generaltax)).click()
+        #time.sleep(2)
+
+        #driver.quit()
+
     #     # time.sleep(5)
     #     # 彈出關閉
     #     self.close_popup(driver)
